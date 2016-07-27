@@ -7,6 +7,8 @@ public class Main {
       list.add("Doubly");
       list.add("Linked");
       list.add("List");
+      
+      list.print();
     
     }
 }

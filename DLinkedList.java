@@ -24,4 +24,17 @@ public class DLinkedList {
     public boolean isEmpty() {
     return head == null;
   }
+    
+ /**
+   * Method to print out all items in the list
+   */
+  public void print() {
+    Node temp = head;
+    //print out nodes until we reach null
+    while(temp!= null)
+    {
+      System.out.println(temp.getData());
+      temp = temp.getNext();
+    }
+  }
 }
