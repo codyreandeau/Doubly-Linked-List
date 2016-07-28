@@ -18,6 +18,29 @@ public class DLinkedList {
     }
   }
   
+/**
+  * Method to insert items to our doubly linked list
+  */
+  public void insert(int index, String data)
+  {
+    //Check if index is less than 0, or greater than the size of the list
+    if(index < 0 || index > size()) {
+      return;
+    }
+    //Check if index is equal to 0
+    if(index == 0) {
+      Node temp = head;
+      head = new Node(data, temp, null);
+      if(temp != null) {
+        temp.setNext(head);
+      }
+      if (tail == null) {
+        tail = head;
+      }
+        return;
+      }
+  }
+  
  /**
    * Method to check if each node is empty
    */
