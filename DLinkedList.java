@@ -26,6 +26,19 @@ public class DLinkedList {
   }
     
  /**
+   * Method that records the size of the list
+   */
+  public int size() {
+    int counter = 0;
+    Node temp = head;
+    while(temp!=null) {
+      counter++;
+      temp = temp.getNext();
+    }
+    return counter;
+ }
+    
+ /**
    * Method to print out all items in the list
    */
   public void print() {
