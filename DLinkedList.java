@@ -39,6 +39,12 @@ public class DLinkedList {
       }
         return;
       }
+    
+    //Find the index of where the node should be placed by finding the predecessor
+    Node pre = head;
+    for(int i=1; i <= index -1; i++) {
+      pre = pre.getNext();
+    }
   }
   
  /**
