@@ -4,7 +4,7 @@ public class Main {
     
     DLinkedList list = new DLinkedList();
       
-      list.add("Hello");
+      list.add("Hello"); 
       list.add("Name");
       list.add("Cody");
       list.insert(1, "My");

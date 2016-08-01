@@ -50,7 +50,7 @@ public class DLinkedList {
     Node suc = pre.getNext();
     Node newNode = new Node(data, suc, pre);
     pre.setNext(newNode);
-    //Check if the successor is null
+    //Check if the successor is null 
     if(suc == null){
       tail = newNode;
     }else{
