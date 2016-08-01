@@ -45,6 +45,17 @@ public class DLinkedList {
     for(int i=1; i <= index -1; i++) {
       pre = pre.getNext();
     }
+    
+    //Insert the new node within the list
+    Node suc = pre.getNext();
+    Node newNode = new Node(data, suc, pre);
+    pre.setNext(newNode);
+    //Check if the successor is null
+    if(suc == null){
+      tail = newNode;
+    }else{
+      suc.setPrev(newNode);
+    }
   }
   
  /**
@@ -75,7 +86,7 @@ public class DLinkedList {
     //print out nodes until we reach null
     while(temp!= null)
     {
-      System.out.println(temp.getData());
+      System.out.print(temp.getData() + " ");
       temp = temp.getNext();
     }
   }

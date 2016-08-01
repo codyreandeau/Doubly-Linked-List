@@ -4,9 +4,12 @@ public class Main {
     
     DLinkedList list = new DLinkedList();
       
-      list.add("Doubly");
-      list.add("Linked");
-      list.add("List");
+      list.add("Hello");
+      list.add("Name");
+      list.add("Cody");
+      list.insert(1, "My");
+      list.insert(3, "Is");
+      list.insert(5, "Reandeau");
       
       list.print();
     
