@@ -57,6 +57,23 @@ public class DLinkedList {
       suc.setPrev(newNode);
     }
   }
+ 
+ /**
+   * Method to remove a node at a certain index
+   */
+  public String remove(int index) {
+    
+    if(index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException();
+    }
+    
+    Node target = head;
+    for(int i=1; i <= index; i++) {
+      target = target.getNext();
+    }
+    
+    String element = target.getData();
+  }
   
  /**
    * Method to check if each node is empty
