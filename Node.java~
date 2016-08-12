@@ -28,7 +28,7 @@ Node(String data, Node next, Node prev) {
    this.data = data;
  }
  
- public String getData() {
+ public Object getData() {
    return data;
  }
 

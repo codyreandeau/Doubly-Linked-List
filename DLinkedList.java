@@ -73,6 +73,8 @@ public class DLinkedList {
     }
     
     String element = target.getData();
+    
+    return element;
   }
   
  /**
