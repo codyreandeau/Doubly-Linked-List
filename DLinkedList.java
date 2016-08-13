@@ -63,17 +63,35 @@ public class DLinkedList {
    */
   public String remove(int index) {
     
+    //Check if user attempts to remove an element that is 
+    //less than 0 or greater than the size of the list
     if(index < 0 || index >= size()){
       throw new IndexOutOfBoundsException();
     }
     
-    Node target = head;
+    //Find node within the list
+    Node node = head;
     for(int i=1; i <= index; i++) {
-      target = target.getNext();
+      node = node.getNext();
     }
     
-    String element = target.getData();
+    String element = node.getData();
+    Node pre = node.getPrev();
+    Node suc = node.getNext();
     
+    //If the new node is first in the list
+    if(pre == null) {
+      head = suc;
+    }else{
+      pre.setNext(suc);
+    }
+    
+    //If the new node is last in the list
+    if(suc == null){
+      tail = pre;
+    }else{
+      suc.setPrev(pre);
+    }
     return element;
   }
   
