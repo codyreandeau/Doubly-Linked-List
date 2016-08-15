@@ -19,6 +19,10 @@ public class Main {
       list.remove(0);
       list.remove(4);
       list.print();
+      
+      System.out.println();
+      System.out.println("------------------------------");
+      list.printReverse(list.getHead());
     
   }
 }
