@@ -102,6 +102,17 @@ public class DLinkedList {
     return element;
   }
   
+    public void addFirst(String data){
+      Node temp = new Node(data);
+      //Check if list is empty
+      if(isEmpty()){
+         head = temp;
+      }else{
+      temp.setNext(head);
+      head = temp;
+   }
+  }
+  
  /**
    * Method to check if each node is empty
    */
