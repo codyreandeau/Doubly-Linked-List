@@ -102,16 +102,15 @@ public class DLinkedList {
     return element;
   }
   
+ /**
+   * Method to add element into beginning of list
+   */
     public void addFirst(String data){
-      Node temp = new Node(data);
-      //Check if list is empty
-      if(isEmpty()){
-         head = temp;
-      }else{
-      temp.setNext(head);
-      head = temp;
-   }
-  }
+     head = new Node(data, head, null);
+     if(tail == null) {
+       tail = head;
+     }
+    }
   
  /**
    * Method to check if each node is empty

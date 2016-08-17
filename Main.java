@@ -18,6 +18,8 @@ public class Main {
       
       list.remove(0);
       list.remove(4);
+      list.addFirst("You");
+      list.addFirst("Hey");
       list.print();
       
       System.out.println();
