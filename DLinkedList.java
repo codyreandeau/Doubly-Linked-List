@@ -106,7 +106,9 @@ public class DLinkedList {
    * Method to add element into beginning of list
    */
     public void addFirst(String data){
+     //Create new node and make it as the head of the list
      head = new Node(data, head, null);
+     //If tail is equal to null, that means the list is empty
      if(tail == null) {
        tail = head;
      }
