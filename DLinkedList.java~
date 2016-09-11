@@ -3,6 +3,13 @@ public class DLinkedList {
   private Node head;
   private Node tail;
   
+  /**
+  * Method to get access to head
+  */
+ public Node getHead() {
+    return head;
+  }
+  
 /**
   * Method to add items to our linked list
   */
@@ -57,6 +64,55 @@ public class DLinkedList {
       suc.setPrev(newNode);
     }
   }
+ 
+ /**
+   * Method to remove a node at a certain index
+   */
+  public String remove(int index) {
+    
+    //Check if user attempts to remove an element that is 
+    //less than 0 or greater than the size of the list
+    if(index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException();
+    }
+    
+    //Find node within the list
+    Node node = head;
+    for(int i=1; i <= index; i++) {
+      node = node.getNext();
+    }
+    
+    String element = node.getData();
+    Node pre = node.getPrev();
+    Node suc = node.getNext();
+    
+    //If the new node is first in the list
+    if(pre == null) {
+      head = suc;
+    }else{
+      pre.setNext(suc);
+    }
+    
+    //If the new node is last in the list
+    if(suc == null){
+      tail = pre;
+    }else{
+      suc.setPrev(pre);
+    }
+    return element;
+  }
+  
+ /**
+   * Method to add element into beginning of list
+   */
+    public void addFirst(String data){
+     //Create new node and make it as the head of the list
+     head = new Node(data, head, null);
+     //If tail is equal to null, that means the list is empty
+     if(tail == null) {
+       tail = head;
+     }
+    }
   
  /**
    * Method to check if each node is empty
@@ -90,4 +146,14 @@ public class DLinkedList {
       temp = temp.getNext();
     }
   }
+  
+    /**
+   * Recursive method to print out all items in reverse order
+   */
+  public void printReverse(Node node) {
+    if(node.getNext() != null) { 
+        printReverse(node.getNext());  
+    }
+    System.out.print(node.getData() + " "); 
+}
 }

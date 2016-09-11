@@ -25,6 +25,14 @@ public class Main {
       System.out.println();
       System.out.println("------------------------------");
       list.printReverse(list.getHead());
+      
+      System.out.println();
+      System.out.println("------------------------------");
+      list.edit(0, "Hello");
+      list.edit(1, "There,");
+      
+      list.print();
+      
     
   }
 }

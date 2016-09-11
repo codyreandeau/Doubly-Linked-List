@@ -156,4 +156,31 @@ public class DLinkedList {
     }
     System.out.print(node.getData() + " "); 
 }
+  
+      /*
+   * Method to edit a node
+   */
+public void edit(int index, String data) {
+  
+  if (index==0) {
+    head.setData(data);
+    return;
+  }
+  
+  if (index < 0 || index > size()) {
+    throw new IndexOutOfBoundsException("Index out of bounds.");
+  }
+
+     Node pre = head;
+     Node temp = null;
+     for(int i=1; i <= index; i++) {
+        temp = pre;
+        pre = pre.getNext();
+     }
+
+     Node newNode = new Node(data);
+     temp.setNext(newNode);
+     newNode.setNext(pre.getNext());
+     newNode.setPrev(temp);
+}
 }
